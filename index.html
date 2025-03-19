@@ -90,6 +90,44 @@
         </div>
     </div>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('.search-bar input[type="text"]');
+    const recipeCards = document.querySelectorAll('.recipe-card');
+    const filterButtons = document.querySelectorAll('.category-filters button');
+
+    function filterRecipes() {
+        const query = searchInput.value.toLowerCase();
+        const activeCategory = document.querySelector('.category-filters button.active')?.dataset.category || 'all';
+
+        recipeCards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const category = card.dataset.category;
+
+            const matchesSearch = title.includes(query);
+            const matchesCategory = activeCategory === 'all' || category === activeCategory;
+
+            if (matchesSearch && matchesCategory) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+    }
+
+    searchInput.addEventListener('keyup', filterRecipes);
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            filterRecipes();
+        });
+    });
+});
+</script>
+
 </body>
 
 </html>
