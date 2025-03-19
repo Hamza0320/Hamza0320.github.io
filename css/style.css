@@ -1,0 +1,148 @@
+/* styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fdf6f0;
+    color: #4b3f2f;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Pacifico', cursive;
+    color: #a0522d;
+}
+
+.site-header {
+    background-color: #fff0e1;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #e0c5a1;
+}
+
+.site-header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #8b5e3c;
+    font-weight: bold;
+}
+
+.hero {
+    background-color: #fff7ec;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h2 {
+    margin-bottom: 10px;
+    color: #a0522d;
+}
+
+.btn, .btn-small {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #d2691e;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn-small {
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+.featured-recipes, .recipes-page, .contact-page, .about-page {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.recipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.recipe-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.recipe-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.site-footer {
+    background-color: #fff0e1;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #e0c5a1;
+    font-size: 0.9em;
+    color: #8b5e3c;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #e0c5a1;
+    font-size: 1em;
+}
+
+/* Social media links placeholder */
+.site-footer .social-links {
+    margin-top: 10px;
+}
+
+.site-footer .social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #a0522d;
+    font-size: 1.2em;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .recipe-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
