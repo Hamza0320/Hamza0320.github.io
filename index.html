@@ -4,57 +4,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamza's Kitchen - Home</title>
+    <title>Hamza's Kitchen</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 <header class="site-header">
-    <h1>Hamza's Kitchen</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="recipes.html">Recipes</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <h1 class="logo">Hamza's Kitchen</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <main>
     <section class="hero">
-        <h2>Welcome to Hamza's Kitchen!</h2>
-        <p>A warm, homey place where delicious baking and food recipes come to life.</p>
-        <a href="recipes.html" class="btn">Explore Recipes</a>
+        <div class="container">
+            <h2>Welcome to Hamza's Kitchen</h2>
+            <p>Discover wholesome, homemade recipes with an earthy touch.</p>
+            <a href="recipes.html" class="btn primary-btn">Explore Recipes</a>
+        </div>
+    </section>
+
+    <section class="search-bar">
+        <div class="container">
+            <input type="text" placeholder="Search recipes...">
+            <button class="btn secondary-btn">Search</button>
+        </div>
     </section>
 
     <section class="featured-recipes">
-        <h2>Featured Recipes</h2>
-        <div class="recipe-list">
-            <article class="recipe-card">
-                <img src="images/chocolate-cake.jpg" alt="Chocolate Cake">
-                <h3>Chocolate Cake</h3>
-                <p>Moist, rich, and irresistible chocolate cake. A family favorite!</p>
-                <a href="recipes.html#chocolate-cake" class="btn-small">View Recipe</a>
-            </article>
-            <article class="recipe-card">
-                <img src="images/homemade-pizza.jpg" alt="Homemade Pizza">
-                <h3>Homemade Pizza</h3>
-                <p>Crispy crust, melty cheese, and your favorite toppings. Perfection!</p>
-                <a href="recipes.html#homemade-pizza" class="btn-small">View Recipe</a>
-            </article>
-            <article class="recipe-card">
-                <img src="images/apple-pie.jpg" alt="Apple Pie">
-                <h3>Apple Pie</h3>
-                <p>A warm, comforting dessert packed with cinnamon apples.</p>
-                <a href="recipes.html#apple-pie" class="btn-small">View Recipe</a>
-            </article>
+        <div class="container">
+            <h2>Featured Recipes</h2>
+            <div class="card-grid">
+                <article class="recipe-card">
+                    <img src="images/chocolate-cake.jpg" alt="Chocolate Cake">
+                    <div class="card-content">
+                        <h3>Chocolate Cake</h3>
+                        <p>Rich, moist chocolate cake with creamy frosting.</p>
+                        <a href="recipes.html#chocolate-cake" class="btn secondary-btn">View Recipe</a>
+                    </div>
+                </article>
+                <article class="recipe-card">
+                    <img src="images/homemade-pizza.jpg" alt="Homemade Pizza">
+                    <div class="card-content">
+                        <h3>Homemade Pizza</h3>
+                        <p>Crispy crust, melty cheese, and fresh toppings.</p>
+                        <a href="recipes.html#homemade-pizza" class="btn secondary-btn">View Recipe</a>
+                    </div>
+                </article>
+                <article class="recipe-card">
+                    <img src="images/apple-pie.jpg" alt="Apple Pie">
+                    <div class="card-content">
+                        <h3>Apple Pie</h3>
+                        <p>Classic apple pie with cinnamon-spiced apples.</p>
+                        <a href="recipes.html#apple-pie" class="btn secondary-btn">View Recipe</a>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
 </main>
 
 <footer class="site-footer">
-    <p>&copy; 2025 Hamza's Kitchen. All rights reserved.</p>
+    <div class="container">
+        <p>&copy; 2025 Hamza's Kitchen. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+            <a href="#">Pinterest</a>
+        </div>
+    </div>
 </footer>
 </body>
 
