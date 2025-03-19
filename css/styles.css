@@ -137,6 +137,30 @@ body {
     max-width: 80%;
 }
 
+.category-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.category-filters button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.category-filters button:hover,
+.category-filters button.active {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
 .featured-recipes {
     padding: 4rem 1rem;
 }
@@ -160,7 +184,14 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+    opacity: 1;
+}
+
+.recipe-card.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
 }
 
 .recipe-card:hover {
@@ -231,18 +262,34 @@ body {
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.querySelector('.search-bar input[type="text"]');
     const recipeCards = document.querySelectorAll('.recipe-card');
+    const filterButtons = document.querySelectorAll('.category-filters button');
 
-    searchInput.addEventListener('keyup', function() {
-        const query = this.value.toLowerCase();
+    function filterRecipes() {
+        const query = searchInput.value.toLowerCase();
+        const activeCategory = document.querySelector('.category-filters button.active')?.dataset.category || 'all';
 
         recipeCards.forEach(card => {
             const title = card.querySelector('h3').textContent.toLowerCase();
+            const category = card.dataset.category;
 
-            if (title.includes(query)) {
-                card.style.display = '';
+            const matchesSearch = title.includes(query);
+            const matchesCategory = activeCategory === 'all' || category === activeCategory;
+
+            if (matchesSearch && matchesCategory) {
+                card.classList.remove('hidden');
             } else {
-                card.style.display = 'none';
+                card.classList.add('hidden');
             }
+        });
+    }
+
+    searchInput.addEventListener('keyup', filterRecipes);
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            filterRecipes();
         });
     });
 });

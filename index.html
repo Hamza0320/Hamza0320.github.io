@@ -40,11 +40,17 @@
         </div>
     </section>
 
+    <div class="category-filters">
+        <button data-category="all" class="active">All</button>
+        <button data-category="dessert">Desserts</button>
+        <button data-category="main">Main Dishes</button>
+    </div>
+
     <section class="featured-recipes">
         <div class="container">
             <h2>Featured Recipes</h2>
             <div class="card-grid">
-                <article class="recipe-card">
+                <article class="recipe-card" data-category="main">
                     <img src="images/cake.jpg" alt="Chocolate Cake">
                     <div class="card-content">
                         <h3>Chocolate Cake</h3>
@@ -53,14 +59,14 @@
                     </div>
                 </article>
                 <article class="recipe-card">
-                    <img src="images/pizza.jpg" alt="Homemade Pizza">
+                    <img src="images/pizza.jpg" alt="Homemade Pizza" data-category="dessert">
                     <div class="card-content">
                         <h3>Homemade Pizza</h3>
                         <p>Crispy crust, melty cheese, and fresh toppings.</p>
                         <a href="recipes.html#homemade-pizza" class="btn secondary-btn">View Recipe</a>
                     </div>
                 </article>
-                <article class="recipe-card">
+                <article class="recipe-card" data-category="all" class="active">
                     <img src="images/pie.jpg" alt="Apple Pie">
                     <div class="card-content">
                         <h3>Apple Pie</h3>
